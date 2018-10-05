@@ -1,0 +1,249 @@
+.horizontalcssmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+float:right;
+}
+
+/*Top level list items*/
+.horizontalcssmenu ul li{
+position: relative;
+display: inline;
+float: left;
+
+}
+
+/*Top level menu link items style*/
+.horizontalcssmenu ul li a{
+display: list-item;
+width: 120px; /*Width of top level menu link items*/
+padding: 2px 8px;
+border: 1px solid #ff8080;
+border-left-width: 0;
+text-decoration: none;
+background: url(menubg.gif) center center repeat-x;
+color: #4DA6A6;
+font: bold 13px Tahoma;
+}
+	
+/*Sub level menu*/
+.horizontalcssmenu ul li ul{
+left: 0;
+top: 0;
+border-top: 1px solid #FF8040;
+position: absolute;
+display: block;
+visibility: hidden;
+z-index: 100;
+}
+
+/*Sub level menu list items*/
+.horizontalcssmenu ul li ul li{
+display: inline;
+float: none;
+}
+
+
+/* Sub level menu links style */
+.horizontalcssmenu ul li ul li a{
+width: 125px; /*width of sub menu levels*/
+font-weight: normal;
+padding: 2px 5px;
+background: #fbfbfb;
+border-width: 0 1px 1px 1px;
+}
+
+.horizontalcssmenu ul li a:hover{
+background: url(menubgover.gif) center center repeat-x;
+}
+
+.horizontalcssmenu ul li ul li a:hover{
+background: #cde686;
+}
+
+.horizontalcssmenu .arrowdiv{
+position: absolute;
+right: 0;
+background: transparent url(menuarrow.gif) no-repeat center left;
+}
+
+* html p#iepara{ /*For a paragraph (if any) that immediately follows menu, add 1em top spacing between the two in IE*/
+padding-top: 1em;
+}
+
+
+
+
+* {
+margin : 0;
+padding : 0;
+}
+body {
+	background : #fff url(../images/bg.gif) repeat;
+	margin : 0;
+	text-align : center;
+	color : #000;
+	font-family : Tahoma, "Lucida Grande CE", lucida, sans-serif;
+	display: block;
+}
+h1 {
+font-size : 24px;
+color : #666;
+margin : 5px 0 5px 20px;
+font-weight : normal;
+}
+h2 {
+color : #09f;
+font-size : 20px;
+margin : 5px 0 5px 20px;
+font-weight : normal;
+}
+h3 {
+color : #390;
+font-size : 18px;
+font-weight : bold;
+font-family : "Times New Roman", Times, serif;
+margin : 5px 0 0 15px;
+}
+p {
+font-size : 13px;
+color : #000000;
+padding : 10px;
+}
+img {
+border : none;
+float : left;
+}
+a {
+color : #666666;
+text-decoration : none;
+font-size : 13px;
+}
+a:hover {
+text-decoration : none;
+font-size : 13px;
+}
+#outer {
+width : 960px;
+text-align : left;
+margin : 0 auto;
+padding : 5px;
+background-color : #fff;
+}
+#image {
+
+width : 100%;
+clear : both;
+height : 240px;
+}
+#logo {
+margin : 35px 0 0 35px;
+width : 350px;
+float : left;
+height : 80px;
+}
+#logo h1 a {
+color : #09f;
+text-decoration : underline;
+text-align : left;
+display : block;
+text-align : left;
+padding-left : 20px;
+text-decoration : none;
+font-size : 32px;
+}
+#logo h1 a:hover {
+color : #ce4b0b;
+text-decoration : none;
+}
+#menu {
+margin : 0 auto;
+margin-right : 2px;
+}
+ul, li {
+margin-right : 2px;
+padding : 0;
+}
+#menu ul {
+font-size : 15px;
+list-style-type : none;
+font-family : Tahoma, "Lucida Grande CE", lucida, sans-serif;
+}
+#menu ul li {
+float : left;
+margin-right : 0;
+}
+#menu ul li a {
+display : block;
+line-height : 40px;
+text-align : center;
+background-image : url(../images/menu.jpg);
+background-repeat : no-repeat;
+font-weight : bold;
+width : 119px;
+height : 40px;
+color : #fff;
+border-bottom : 1px solid #393939;
+text-decoration : none;
+}
+#menu ul li a:hover {
+background-image : url(../images/menu_hover.jpg);
+text-decoration : none;
+}
+
+#footer-content {
+color : #999;
+margin : 5px auto;
+padding : 10px;
+background : #333;
+clear : both;
+}
+#footer-content a {
+text-decoration : none;
+color : #cccccc;
+font-size : 12px;
+}
+#footer-content a:hover {
+text-decoration : underline;
+color : #ffffff;
+}
+.box ul {
+margin : 0;
+padding : 0;
+list-style : none;
+}
+.box li {
+padding : 2px 0;
+list-style : inside;
+}
+.box li a {
+border : none;
+}
+#box1 {
+float : left;
+width : 280px;
+padding-right : 30px;
+}
+#box2 {
+float : left;
+width : 260px;
+}
+#box3 {
+float : right;
+width : 300px;
+}
+#icons img {
+width : 60px;
+height : 60px;
+float : left;
+margin : 5px;
+border : none;
+}
+#credit {
+border-top : 2px solid #444;
+padding-top : 10px;
+padding-left : 40px;
+margin-left : 15px;
+font-size : 12px;
+text-align:right;
+}

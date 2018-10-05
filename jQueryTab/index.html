@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Tab</title>
+<LINK href="images/favicon.png" type=image/x-icon rel=icon>
+<LINK href="images/favicon.png" type=image/x-icon rel="shortcut icon">
+
+<link rel="stylesheet" type="text/css" href="css/base0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/header_footer0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/car_landing10ae.css?v=20120809"/>
+<link rel="stylesheet" type="text/css" href="css/screen0191.css?v=20120731"/>
+
+<link rel="stylesheet" type="text/css" href="css/datepicker0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/car_seo0191.css?v=20120731" />
+
+
+
+<script type="text/javascript" src="js/jquery-1.7.2.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.core.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.widget.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.autocomplete.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.position.min0191.js?v=20120731"></script> 
+
+<script type="text/javascript" src="js/jquery.ui.datepicker0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.selectbox0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.cookie10ae.js?v=20120809"></script>
+
+<script type="text/javascript" src="js/common_car0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/festivals0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/carsWidget3439.js?v=20120820"></script>
+<script type="text/javascript" src="js/thickbox0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/cityDropdown0191.js?v=20120731"></script>
+
+<style type="text/css">
+*{margin:0; padding:0;}
+
+body{
+	background: url(../images/bg.PNG);	
+	font:normal 11px/1.5em Arial, Helvetica, sans-serif;
+}
+a{outline:none;}
+
+#tabContaier{
+	background:#f0f0f0;
+	border:1px solid #fff;
+	margin:0px auto;
+	padding:2px;
+	position:relative;
+	width:89%;
+	height:100%;
+}
+	#tabContaier ul{
+		overflow:hidden;
+		border-right:0px solid #fff;
+		height:35px;
+		position:absolute;
+		z-index:100;
+	}
+	#tabContaier li{
+		float:left;
+		list-style:none;
+	}
+	#tabContaier li a{
+		background:#ccff66;
+		border:1px solid #fcfcfc;
+		border-right:0;
+		color:#666;
+		cursor:pointer;
+		display: block;
+		height:35px;
+		line-height:35px;
+		padding:0 25px;
+		text-decoration:none;
+		text-transform:uppercase;
+	}
+	#tabContaier li a:hover{
+		background:#f5f5f5;
+	}
+	#tabContaier li a.active{
+		background:#FFFFFF;
+		border:5px solid #fff;
+		border-right:0;
+		color:#333;
+	}
+	.tabDetails{
+		background:#FFFFFF;
+		border:0px solid #fff;
+		margin:35px 	0 0;
+	}
+	.tabContents{
+		padding:30px
+	}
+	.tabContents h1{
+		font:normal 24px/1.1em Georgia, "Times New Roman", Times, serif;
+		padding:0 0 10px;
+	}
+	.tabContents p{
+		padding:0 0 10px;
+	}
+.style4 {color: #FF0000; font-family: "Palatino Linotype"; font-size: 14px;}
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0">
+
+<p>
+  <!-- //Tab Container -->
+</p>
+<table width="100%" height="50%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <th width="65%" scope="col">
+	<div id="tabContaier">
+	<ul>
+    	<li><a class="active" href="#tab1">Local City Usage</a></li>
+    	<li><a href="#tab2">Outstation Travel</a></li>
+    	<li><a href="#tab3">Transfer Services</a></li>
+    </ul><!-- //Tab buttons -->
+    <div class="tabDetails">
+    	<div id="tab1" class="tabContents">
+        	
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th width="51%" height="45" scope="col"><div align="left" class="style4">I want a Cab from </div></th>
+                <th width="49%" scope="col"><div align="left" class="style4">I want to go to </div></th>
+              </tr>
+              <tr>
+                <th height="34" scope="col" align="left"><label>
+                <span class="inputOuter flL">
+							<select name="outstation-source"  style="width:170px" value="Select Origin" class="text_field" tabindex="3" onfocus="if (this.value=='Select Destination') this.value='';" onblur="if (this.value=='') this.value='Select Destination';" onkeydown ="if(event.keyCode == 27) {$('#toCitySelect').val('');$('#selectedToCityName').val('');}" >
+				  <option selected="selected">---Select---</option>
+<option>pune</option>
+<option>mumbai</option>
+<option>other</option>
+</select>
+						</span>
+                </label></th>
+                <th scope="col" align="left"><input name="textfield2" type="text" class="active" /></th>
+              </tr>
+              <tr>
+                <th height="34" scope="col" align="left">
+				<!-- Check-Dates -->
+                    <span class="check_date flL width140"> 
+	<label>Pick-up Date <dayLight>(<span id="dayOfWeek"></span>)</dayLight></label> 
+		<span class="dates_info width140 flL">		
+			<span class="inputOuter flL">
+				<input type="text" name= "pickupdate" value="08/27/2012"  id="pickUpDate" tabindex="5" class="text_field flL" style="display:block"/>
+			</span>
+			<a onclick="$('#pickUpDate').datepicker('show'); return false;"  class="cal_icn flL" href="#"></a>
+			 <input type="hidden" name="date" id="dateField"/> 
+			 <input type="hidden" name="month" id="monthField"/>
+			 <input type="hidden" name="year" id="yearField"/>
+	</span></span>
+
+				</th>
+                <th scope="col" align="left">&nbsp;</th>
+              </tr>
+            </table>
+            <p><br />
+            Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
+            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
+			<p>Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
+            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
+			<p>Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
+            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
+        </div><!-- //tab1 -->
+    	<div id="tab2" class="tabContents">
+        	<h1>Div Two</h1>
+            <p>Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
+            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
+        </div><!-- //tab2 -->
+    	<div id="tab3" class="tabContents">
+        	<h1>Div Three</h1>
+            <p>Sed gravida velit ut lorem dictum vitae venenatis dolor faucibus. In vehicula malesuada mi, vel semper sem porta in. Mauris suscipit lorem eget justo congue semper.</p>
+            <p>Donec et purus eget elit tristique consequat. Integer ut orci eu augue tristique viverra nec vitae odio. Nulla sem nibh, posuere quis condimentum vitae, posuere sit amet lectus. Morbi euismod tincidunt mauris ut scelerisque.</p>
+        </div><!-- //tab3 -->
+    </div><!-- //tab Details -->
+</div>	</th>
+    <th width="35%" rowspan="2" scope="col">
+	<img src="../images/steps.PNG" />	</th>
+  </tr>
+  
+</table>
+<p>
+  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$(".tabContents").hide(); // Hide all tab conten divs by default
+		$(".tabContents:first").show(); // Show the first div of tab content by default
+		
+		$("#tabContaier ul li a").click(function(){ //Fire the click event
+			
+			var activeTab = $(this).attr("href"); // Catch the click link
+			$("#tabContaier ul li a").removeClass("active"); // Remove pre-highlighted link
+			$(this).addClass("active"); // set clicked link to highlight state
+			$(".tabContents").hide(); // hide currently visible tab content div
+			$(activeTab).fadeIn(); // show the target tab content div by matching clicked link.
+		});
+	});
+  </script>	
+</p>
+</body>
+</html>

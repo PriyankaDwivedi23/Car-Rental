@@ -1,0 +1,672 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 10, 2015 at 07:12 PM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `mydb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `area/plots`
+--
+
+CREATE TABLE IF NOT EXISTS `area/plots` (
+  `id` int(11) NOT NULL,
+  `area_name` varchar(45) DEFAULT NULL,
+  `area_population` varchar(45) DEFAULT NULL,
+  `area_size` varchar(45) DEFAULT NULL,
+  `City_id` int(11) NOT NULL,
+  `City_State_id` int(11) NOT NULL,
+  `City_State_Region_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`City_id`,`City_State_id`,`City_State_Region_id`),
+  KEY `fk_Area/Plots_City1_idx` (`City_id`,`City_State_id`,`City_State_Region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `area/plots`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE IF NOT EXISTS `booking` (
+  `customer_id` int(10) unsigned NOT NULL,
+  `car_id` int(10) unsigned NOT NULL,
+  `sourcecity` varchar(45) NOT NULL,
+  `destinationcity` varchar(45) NOT NULL,
+  `traveldate` date NOT NULL,
+  `duration` int(11) NOT NULL,
+  `pickupaddress` tinytext NOT NULL,
+  `nearbylandmark` varchar(45) NOT NULL,
+  `pickuptime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `vendorname` varchar(45) NOT NULL,
+  `rate` varchar(20) NOT NULL,
+  `amount` varchar(10) NOT NULL,
+  PRIMARY KEY (`customer_id`,`car_id`),
+  KEY `fk_customer_has_car_car1_idx` (`car_id`),
+  KEY `fk_customer_has_car_customer1_idx` (`customer_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`customer_id`, `car_id`, `sourcecity`, `destinationcity`, `traveldate`, `duration`, `pickupaddress`, `nearbylandmark`, `pickuptime`, `vendorname`, `rate`, `amount`) VALUES
+(1, 2, 'mumbai', 'pune', '2012-08-30', 2, 'Vasai-West', 'opp. Navjeeva Hospital', '2012-08-28 02:05:58', 'ABC Rental', '9', '5830');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `car`
+--
+
+CREATE TABLE IF NOT EXISTS `car` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `carname` varchar(45) NOT NULL,
+  `description` tinytext NOT NULL,
+  `seating` int(11) NOT NULL,
+  `rate-per-km` varchar(45) NOT NULL,
+  `image` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `car`
+--
+
+INSERT INTO `car` (`id`, `carname`, `description`, `seating`, `rate-per-km`, `image`) VALUES
+(1, 'Tata Indica', ' Air Condition\r\n Stereo', 4, '8.5', 'images/indica.png'),
+(2, 'Tata Indigo', 'Air Condition\r\nStereo', 4, '9', 'images/indigo.png'),
+(3, 'Chevrolet Tavera', 'Sterio Air-Conditioned', 4, '9', 'images/tavera.png'),
+(4, 'Toyota Innova', 'Full Size   \r\nComfort.', 6, '12', 'images/innova.png'),
+(5, 'Mahindra Xylo', 'FullSize Comfort', 6, '11.5', 'images/xylo.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(45) DEFAULT NULL,
+  `category_size` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `city`
+--
+
+CREATE TABLE IF NOT EXISTS `city` (
+  `id` int(11) NOT NULL,
+  `city_name` varchar(45) DEFAULT NULL,
+  `city_population` bigint(20) DEFAULT NULL,
+  `city_type` varchar(45) DEFAULT NULL,
+  `State_id` int(11) NOT NULL,
+  `State_Region_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`State_id`,`State_Region_id`),
+  KEY `fk_City_State1_idx` (`State_id`,`State_Region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `city`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content`
+--
+
+CREATE TABLE IF NOT EXISTS `content` (
+  `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content` blob NOT NULL,
+  `weight` int(11) NOT NULL,
+  `url_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`content_id`),
+  KEY `fk_content_url1_idx` (`url_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `content`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `age` int(11) NOT NULL,
+  `contact` varchar(15) NOT NULL,
+  `address` tinytext NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `name`, `email`, `age`, `contact`, `address`, `password`) VALUES
+(1, 'imtiyaz', 'imtiyaz_hirani@yahoo.com', 29, '7798258949', 'Kaul''s Heritage City\r\nVasai-west', 'lionking');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `destination`
+--
+
+CREATE TABLE IF NOT EXISTS `destination` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(30) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `destination`
+--
+
+INSERT INTO `destination` (`id`, `city`, `state`) VALUES
+(1, 'pune', 'Maharashtra'),
+(2, 'mumbai', 'Maharashtra'),
+(3, 'delhi', 'delhi'),
+(4, 'agra', 'uttar pradesh'),
+(5, 'goa', 'goa'),
+(6, 'alibaug', 'Maharashtra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `distance`
+--
+
+CREATE TABLE IF NOT EXISTS `distance` (
+  `id1` int(11) NOT NULL,
+  `id2` int(11) NOT NULL,
+  `distance` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `distance`
+--
+
+INSERT INTO `distance` (`id1`, `id2`, `distance`) VALUES
+(1, 1, '0'),
+(1, 2, '5'),
+(1, 3, '10'),
+(1, 4, '15'),
+(2, 1, '5'),
+(2, 2, '0'),
+(2, 3, '12'),
+(2, 4, '8'),
+(3, 1, '10'),
+(3, 2, '12'),
+(3, 3, '0'),
+(3, 4, '6'),
+(4, 1, '15'),
+(4, 2, '8'),
+(4, 3, '6'),
+(4, 4, '0'),
+(5, 7, '12'),
+(7, 5, '12'),
+(5, 5, '0'),
+(7, 7, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `heading`
+--
+
+CREATE TABLE IF NOT EXISTS `heading` (
+  `heading_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `heading_content` blob NOT NULL,
+  `weight` int(11) NOT NULL,
+  `url_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`heading_id`),
+  KEY `fk_heading_url1_idx` (`url_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `heading`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `link`
+--
+
+CREATE TABLE IF NOT EXISTS `link` (
+  `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `link_content` blob NOT NULL,
+  `weight` int(11) NOT NULL,
+  `url_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`link_id`),
+  KEY `fk_link_url1_idx` (`url_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `link`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `local_source`
+--
+
+CREATE TABLE IF NOT EXISTS `local_source` (
+  `source_id` int(10) NOT NULL AUTO_INCREMENT,
+  `city` varchar(30) NOT NULL,
+  `state` varchar(30) NOT NULL,
+  PRIMARY KEY (`source_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `local_source`
+--
+
+INSERT INTO `local_source` (`source_id`, `city`, `state`) VALUES
+(1, 'pune', 'Maharashtra'),
+(2, 'mumbai', 'Maharashtra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location`
+--
+
+CREATE TABLE IF NOT EXISTS `location` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `location_name` varchar(40) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`id`, `location_name`, `city`) VALUES
+(1, 'narangibaug', 'pune'),
+(2, 'shivaji nagar', 'pune'),
+(3, 'location3', 'pune'),
+(4, 'location4', 'pune'),
+(5, 'andheri', 'mumbai'),
+(6, 'location_delhi', 'delhi'),
+(7, 'bandra ', 'mumbai');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `marquee_routes`
+--
+
+CREATE TABLE IF NOT EXISTS `marquee_routes` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `source` varchar(45) NOT NULL,
+  `destination` varchar(45) NOT NULL,
+  `distance` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `marquee_routes`
+--
+
+INSERT INTO `marquee_routes` (`id`, `source`, `destination`, `distance`) VALUES
+(1, 'pune', 'mumbai', '160'),
+(2, 'delhi', 'agra', '180');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `month`
+--
+
+CREATE TABLE IF NOT EXISTS `month` (
+  `id` int(11) NOT NULL,
+  `month_name` varchar(45) DEFAULT NULL,
+  `allotted_power` double DEFAULT NULL,
+  `Season_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Month_Season1_idx` (`Season_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `month`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rank`
+--
+
+CREATE TABLE IF NOT EXISTS `rank` (
+  `rank_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `total_weight` int(11) NOT NULL,
+  `url_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`rank_id`),
+  KEY `fk_rank_url_idx` (`url_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `rank`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `region`
+--
+
+CREATE TABLE IF NOT EXISTS `region` (
+  `id` int(11) NOT NULL,
+  `region_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `region`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_name` varchar(50) NOT NULL,
+  `review` text NOT NULL,
+  `companyname` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`ID`, `customer_name`, `review`, `companyname`) VALUES
+(1, 'Ravi', 'Good Service!! Recommended...', 'Wheels On Hire'),
+(2, 'Mr. T Suman', 'Driver was Good. Car was in Good Condition. ', 'XYZ Car Rental'),
+(3, 'Aditya Panajkar', 'Took 4 Hours to reach mumbai from Pune.. Driver was very Slow.', 'Mookambika Car Rental');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `season`
+--
+
+CREATE TABLE IF NOT EXISTS `season` (
+  `id` int(11) NOT NULL,
+  `season_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `season`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `source`
+--
+
+CREATE TABLE IF NOT EXISTS `source` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(30) NOT NULL,
+  `state` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `source`
+--
+
+INSERT INTO `source` (`id`, `city`, `state`) VALUES
+(1, 'pune', 'Maharashtra'),
+(2, 'mumbai', 'Maharashtra'),
+(3, 'delhi', 'delhi'),
+(4, 'agra', 'uttar pradesh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `specialpackages`
+--
+
+CREATE TABLE IF NOT EXISTS `specialpackages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `source` varchar(30) NOT NULL,
+  `destination` varchar(30) NOT NULL,
+  `km` varchar(20) NOT NULL,
+  `carname` varchar(30) NOT NULL,
+  `rateperkm` varchar(20) NOT NULL,
+  `amount` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `specialpackages`
+--
+
+INSERT INTO `specialpackages` (`id`, `source`, `destination`, `km`, `carname`, `rateperkm`, `amount`) VALUES
+(1, 'pune', 'mumbai', '160', 'Tata Indica', '8', '1530'),
+(2, 'pune', 'shirdi', '180', 'Toyota Innova', '12', '4570');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `state`
+--
+
+CREATE TABLE IF NOT EXISTS `state` (
+  `id` int(11) NOT NULL,
+  `state_name` varchar(45) DEFAULT NULL,
+  `population` bigint(20) DEFAULT NULL,
+  `Region_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`Region_id`),
+  KEY `fk_State_Region_idx` (`Region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `state`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `url`
+--
+
+CREATE TABLE IF NOT EXISTS `url` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url` tinytext NOT NULL,
+  `keyword` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `url`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendor`
+--
+
+CREATE TABLE IF NOT EXISTS `vendor` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `vendorname` varchar(45) NOT NULL,
+  `rating` tinytext NOT NULL,
+  `address` tinytext NOT NULL,
+  `sourcecity` varchar(45) NOT NULL,
+  `companyname` varchar(45) NOT NULL,
+  `companywebsite` varchar(45) NOT NULL,
+  `mobile` varchar(45) NOT NULL,
+  `landline` varchar(45) NOT NULL,
+  `state` varchar(45) NOT NULL,
+  `pin code` varchar(45) NOT NULL,
+  `garagelocation` text NOT NULL,
+  `drivercharge` varchar(10) NOT NULL,
+  `localdrivercharge` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `vendor`
+--
+
+INSERT INTO `vendor` (`id`, `vendorname`, `rating`, `address`, `sourcecity`, `companyname`, `companywebsite`, `mobile`, `landline`, `state`, `pin code`, `garagelocation`, `drivercharge`, `localdrivercharge`) VALUES
+(1, 'Sachin Dalvi', 'images/5star.png', 'Kaul''s Heritage City Vasai', 'mumbai', 'Mookambika Car Rental', 'www.abc.com', '7798258949', '02245788967', 'Maharashtra', '401202', 'bandra', '300', '50'),
+(2, 'Amin Panjwani', 'images/5star.png', 'Narangibaugh', 'pune', 'Wheels On Hire', 'www.wheelsonhire.co.in', '7896475862', '02014798653', 'Maharashtra', '423568', 'narangibaug', '250', '00'),
+(3, 'XYZ Car Rental', 'images/5star.png', 'KArve Nagar, Pune', 'pune', 'XYZ Car Rental', 'www.xyz.com', '9866589432', '02014798653', 'Maharashtra', '423568', 'shivaji nagar', '200', '00'),
+(4, 'Suresh ', 'images/5star.png', 'Kothrud, Pune', 'mumbai', 'ABC Car Rental', 'www.abc.com', '9265326579', '02023657895', 'Maharacshtra', '4306598', 'andheri', '200', '50'),
+(5, 'Delhi Car Rental', 'images/5star.png', 'Fort, Delhi', 'delhi', 'Delhi Car Rental', 'www.delhicarrental.com', '569874568', '022365478', 'delhi', '456982', 'Station', '250', '100');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendor_has_car`
+--
+
+CREATE TABLE IF NOT EXISTS `vendor_has_car` (
+  `vendor_id` int(10) unsigned NOT NULL,
+  `car_id` int(10) unsigned NOT NULL,
+  `actualquantity` int(11) NOT NULL,
+  `bookedquantity` int(11) NOT NULL,
+  `rateperkm` varchar(20) NOT NULL,
+  PRIMARY KEY (`vendor_id`,`car_id`),
+  KEY `fk_vendor_has_car_car1_idx` (`car_id`),
+  KEY `fk_vendor_has_car_vendor_idx` (`vendor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vendor_has_car`
+--
+
+INSERT INTO `vendor_has_car` (`vendor_id`, `car_id`, `actualquantity`, `bookedquantity`, `rateperkm`) VALUES
+(1, 1, 2, 0, '8.5'),
+(1, 2, 2, 0, '9'),
+(1, 3, 1, 0, '9'),
+(1, 4, 1, 0, '12'),
+(1, 5, 1, 0, '11.5'),
+(2, 1, 1, 0, '8'),
+(2, 2, 1, 0, '9'),
+(2, 3, 1, 0, '9'),
+(2, 4, 1, 0, '12'),
+(2, 5, 1, 0, '11'),
+(3, 1, 1, 0, '9'),
+(3, 2, 2, 0, '10'),
+(4, 1, 1, 0, '8'),
+(4, 4, 2, 0, '13'),
+(5, 4, 1, 0, '13');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `area/plots`
+--
+ALTER TABLE `area/plots`
+  ADD CONSTRAINT `fk_Area/Plots_City1` FOREIGN KEY (`City_id`, `City_State_id`, `City_State_Region_id`) REFERENCES `city` (`id`, `State_id`, `State_Region_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `booking`
+--
+ALTER TABLE `booking`
+  ADD CONSTRAINT `fk_customer_has_car_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_customer_has_car_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `city`
+--
+ALTER TABLE `city`
+  ADD CONSTRAINT `fk_City_State1` FOREIGN KEY (`State_id`, `State_Region_id`) REFERENCES `state` (`id`, `Region_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `content`
+--
+ALTER TABLE `content`
+  ADD CONSTRAINT `fk_content_url1` FOREIGN KEY (`url_id`) REFERENCES `url` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `heading`
+--
+ALTER TABLE `heading`
+  ADD CONSTRAINT `fk_heading_url1` FOREIGN KEY (`url_id`) REFERENCES `url` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `link`
+--
+ALTER TABLE `link`
+  ADD CONSTRAINT `fk_link_url1` FOREIGN KEY (`url_id`) REFERENCES `url` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `month`
+--
+ALTER TABLE `month`
+  ADD CONSTRAINT `fk_Month_Season1` FOREIGN KEY (`Season_id`) REFERENCES `season` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `rank`
+--
+ALTER TABLE `rank`
+  ADD CONSTRAINT `fk_rank_url` FOREIGN KEY (`url_id`) REFERENCES `url` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `state`
+--
+ALTER TABLE `state`
+  ADD CONSTRAINT `fk_State_Region` FOREIGN KEY (`Region_id`) REFERENCES `region` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `vendor_has_car`
+--
+ALTER TABLE `vendor_has_car`
+  ADD CONSTRAINT `fk_vendor_has_car_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_vendor_has_car_vendor` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;

@@ -1,0 +1,828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<LINK href="images/favicon.png" type=image/x-icon rel=icon>
+<LINK href="images/favicon.png" type=image/x-icon rel="shortcut icon">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+
+<meta name="title" content="Car Rental | Rent a Car Online | Car Hire Online | Budget Car Rent and Online Booking Service - Wheels On Hire">
+<meta name="description" content="Get best deals on car rental service, online cab booking and car hire for all Indian cities.  Rent a car online, book luxury, AC, Non-AC cab for Airport transfers, city to city travel, and holiday or long distance tours.   Cab Booking available for New Delhi, Mumbai, Chennai, Kolkata and all other cities.">
+<meta name="keywords" content="Car Rental, Car Booking, Car on Hire, Cab Hire, Cab Booking, Car Booking deals, car hire Discounts, Car on rent, cheap car hire, cheap cab booking">
+<title>Car Rental | Rent a Car Online | Car Hire Online | Budget Car Rent and Online Booking Service - WheelsOnHire</title>
+
+<link rel="stylesheet" type="text/css" href="css/base0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/header_footer0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/car_landing10ae.css?v=20120809"/>
+<link rel="stylesheet" type="text/css" href="css/screen0191.css?v=20120731"/>
+
+<link rel="stylesheet" type="text/css" href="css/datepicker0191.css?v=20120731"/>
+<link rel="stylesheet" type="text/css" href="css/car_seo0191.css?v=20120731" />
+
+
+
+<script type="text/javascript" src="js/jquery-1.7.2.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.core.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.widget.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.autocomplete.min0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.position.min0191.js?v=20120731"></script> 
+
+<script type="text/javascript" src="js/jquery.ui.datepicker0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.ui.selectbox0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/jquery.cookie10ae.js?v=20120809"></script>
+
+<script type="text/javascript" src="js/common_car0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/festivals0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/carsWidget3439.js?v=20120820"></script>
+<script type="text/javascript" src="js/thickbox0191.js?v=20120731"></script>
+<script type="text/javascript" src="js/cityDropdown0191.js?v=20120731"></script>
+
+</head>
+
+<!-- SiteCatalyst code version: H.20.2.Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+<script>
+	var isTestServ=false;
+	var serverType= "192";
+	if(serverType=='172'){
+		isTestServ=true;
+	}
+</script>
+<script language="JavaScript" type="text/javascript" src="../js/s_code_08072010.js"></script> 
+<script language="javascript1.1" type="text/javascript">
+s.pageName="landing:cars:landing";
+s.hier1="in:cars:landing";
+s.hier2="landing:cars";
+s.events="event7";
+s.prop24="cars";
+s.channel="landing";
+var s_code=s.t();if(s_code)document.write(s_code)
+</script>
+<script language="JavaScript" type="text/javascript">
+function validateForm()
+{
+var x=document.forms["myForm"]["outstation-source"].value;
+var y=document.forms["myForm"]["outstation-destination"].value;
+var z=document.forms["myForm"]["local-city"].value;
+if (z==null || z=="" || z=="---Select---")
+  {
+  
+if (x==null || x=="" || x=="---Select---")
+  {
+  alert("Please select the Source City");
+  return false;
+  }
+ if (y==null || y=="" || y=="---Select---")
+  {
+  alert("Please select the Destination City");
+  return false;
+  } 
+  if(x == y)
+  {
+  alert("You have selected SAME city as Source and Destination \n Access Local City Usage Tab if You wish to book a Local Cab");
+  return false;
+  }
+  }
+  
+}</script> 
+<!-- SiteCatalyst code version: H.20.2.Copyright 1997-2009 Omniture, Inc. More info available at http://www.omniture.com -->
+<body>
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+<!-- header -->
+<!-- header -->
+<!-- Container -->
+<div class="clearFix container1">
+<!--Left Block -->
+<div id="leftblock">
+<div id="container" class="home">
+  <div class="grid_976">
+    <!-- content -->
+      <div id="content" class="append_bottom1 clearFix">
+      <div id="main" class="span_20">
+        <!-- Widget section -->
+        <div class="borderBottom clearFix"><div class="clearFix"> <span class="car_icn flL">
+          <!-- FF3 and Opera -->
+           </span><h2>Book your Cab</h2> </div>
+         <span class="flR" style="margin-top:-18px;cursor:pointer;"><small class="questionMark flR"></small> <a class="flR" style="font-size:110%; text-decoration:none">Booking Helpline - 9755684923 </a></span>
+		 </div>
+		 
+         
+         <div class="labels clearFix">
+		<ul class="lptabs flL">
+		<li>
+			<a  id="localUsageBtn" href="javascript:void(0);" onclick="showWidget('Local');" value="Local" >Local City Usage</a>
+		</li>
+		<li>
+			<a id="outstationBtn" class="active"  href="javascript:void(0);" onclick="showWidget('Outstation');" value="Outstation">Outstation Travel</a>
+		</li>
+	
+		</ul> 
+		<div id="bookingType" style="display:none">Outstation</div>        
+	        <!--  <p><input name="radioBtn" type="radio" id="Sightseeing" value=""  /> 
+	         <label for="Sightseeing">Sightseeing</label></p>
+	         <p><input name="radioBtn" type="radio" id="Airport_Transfer" value="" /> 
+	         <label for="Airport_Transfer">Airport Transfer</label></p>
+	         <p><input name="radioBtn" type="radio" id="localUsageBtn" value="Local"  onclick="showWidget(this.value);" />
+	          	<label for="Local_Usage">Local Usage</label>	          	
+	         </p>
+	         <p><input name="radioBtn" type="radio" value="Outstation" id="outstationBtn"  checked="checked" onclick="showWidget(this.value);" /> 
+	         	<label for="Outstation">Outstation</label>
+	         </p>	         
+	          -->
+	           																																													  
+         </div>
+
+        <div class="hp_section clearFix append_bottom drop-shadow curved1 curved-hz-3">
+        <form name="myForm" onsubmit="return validateForm()" method="post" action="index.php?page=submit" >
+          <div id="cityCodeStr" style="display:none"></div>
+          <div id="localUsageType" style="display:none"></div>   	
+ 		  <div id="fromCityCodeStr" style="display:none"></div>
+ 		  <div id="toCityCodeStr" style="display:none"></div>
+ 		  <div id="airCityCodeStr" style="display:none"></div>
+ 		  <!--<div id="serviceTypeStr" style="display:none"></div>-->
+ 		  <!--<div id="tripTypeStr" style="display:none"></div>-->
+ 		  <!--<div id="trasnferTypeStr" style="display:none"></div>-->
+ 		  <div id="locPickupDateStr" style="display:none"></div>
+ 		  <div id="outPickupDateStr" style="display:none"></div>
+ 		  <div id="transPickupDateStr" style="display:none"></div>
+ 		  <div id="cityNameStr" style="display:none">Select City</div>
+ 		  <div id="airCityNameStr" style="display:none">Select City</div>
+ 		  <input type="hidden"  name ="logCurrentPage" id="logCurrentPage" value="WidgetLanding"/>
+ 		  <input type="hidden"  name ="aphErrorType" id="aphErrorType" value=""/>
+ 		  <input type="hidden" name="dummyDropDown" id="dummyDropDown"/>
+ 		  <input type="hidden" name="transferService" id="transferService"/>
+<!--  		  <input type="text" name="transferSelectajx" id="transferSelectajx"/> -->
+ 		    <!--Local/Outstation Widget -->
+            <div class="widget">
+              <!-- Widget Section 1 -->
+              
+             <div class="clearFix mrgnBot10"> <span class="flag_icn flL mtop5"></span>
+	                <!-- Local Widget Inner part -->
+	                <div id = "locCity" class="widget_inner flL" style="display:none;">
+	                 <h3 class="clearFix"><span id="cityLabel" class="section_heading flL" style="padding:0">City</span></h3>
+	         				<p class="clearFix destinationCity curved curved-hz-1" style="width:220px;"> 	         									
+								<span class="left_part flL"></span>
+			                  	<span class="selectBox center_part flL  selectBox-dropdown" style="width: 170px; display: inline-block;">
+									<span class="inputOuter flL">
+							<select name="local-city"  style="width:170px" value="Select Origin" class="text_field" tabindex="3" onfocus="if (this.value=='Select Destination') this.value='';" onblur="if (this.value=='') this.value='Select Destination';" onkeydown ="if(event.keyCode == 27) {$('#toCitySelect').val('');$('#selectedToCityName').val('');}" >
+				  <option selected="selected">---Select---</option>
+<option>Pune</option>
+<option>Mumbai</option>
+<option>Local</option>
+</select>
+						</span>
+											<span class="selectBox-arrow controls flR" onclick="showCityList();"  style="cursor:pointer; width:19px;height:26px">
+														<a class="select_drop_icon flR"  href="javascript:void(0)"></a>
+											</span>
+							  </span>
+								<span class="right_part flL"></span>	                 					
+							<input type="hidden" name ="citySelect" id="citySelect" />
+							<input type="hidden" name="selectedCityName" id="selectedCityName" value=""/>
+							</p>										
+	                  
+	                  <div class="clear"></div>
+	                 
+	                </div>
+	                <!-- /Local Widget Inner part -->
+             		<input type="hidden" name="serviceTypeForSearch" id="serviceTypeForSearch" value=""/>
+	              	
+					
+					
+					<!-- Outstation Widget Inner part -->
+	              	
+	                <div id = "outFromCity" class="widget_inner flL" style="width:220px;">
+	                 <h3 class="clearFix"><span class="section_heading flL" style="padding:0">I want a cab from</span></h3>
+	                   <p class="clearFix destinationCity curved curved-hz-1">        	
+	                  	<span class="left_part flL"></span>
+	                  	<span class="selectBox center_part flL  selectBox-dropdown" style="width: 170px; display: inline-block;">
+							<span class="inputOuter flL">
+							<select name="outstation-source"  style="width:170px" value="Select Origin" class="text_field" tabindex="3" onfocus="if (this.value=='Select Destination') this.value='';" onblur="if (this.value=='') this.value='Select Destination';" onkeydown ="if(event.keyCode == 27) {$('#toCitySelect').val('');$('#selectedToCityName').val('');}" >
+				  <option selected="selected">---Select---</option>
+<option>pune</option>
+<option>mumbai</option>
+<option>other</option>
+</select>
+						</span>
+									<span class="selectBox-arrow controls flR" onclick="showFromCityList();"   style="cursor:pointer; width:19px;height:26px">
+												<a class="select_drop_icon flR" href="javascript:void(0)"></a>
+									</span>
+						 </span>
+							<span class="right_part flL"></span>
+	                   <input type="hidden"   name ="fromCitySelect" id="fromCitySelect"/>
+			   			<input type="hidden" name="selectedFromCityName" id="selectedFromCityName" value=""/>
+	                  </p>
+	                  <div class="clear"></div>
+	                </div>
+	                <!-- /Outstation Widget Inner part -->
+                
+	                 <!-- Outstation Widget Inner part -->
+	                <div id = "outToCity" class="widget_inner flL" style="width:335px;" >
+	                 <h3 class="clearFix"><span class="section_heading flL" style="padding:0">I want to go to</span></h3>
+	                   <div id="multi"  style="width:125px;margin-top:3px;" class="flR"></div>
+	                  <p class="clearFix destinationCity curved curved-hz-1"> 
+	                  	<span class="left_part flL"></span>
+	                  	<span class="selectBox center_part flL  selectBox-dropdown" style="width: 170px; display: inline-block;">
+							<span class="inputOuter flL">
+							<select name="outstation-destination"  style="width:170px" value="Select Destination" class="text_field" tabindex="3" onfocus="if (this.value=='Select Destination') this.value='';" onblur="if (this.value=='') this.value='Select Destination';" onkeydown ="if(event.keyCode == 27) {$('#toCitySelect').val('');$('#selectedToCityName').val('');}" >
+				  <option selected="selected">---Select---</option>
+<option>pune</option>
+<option>mumbai</option>
+<option>other</option>
+</select>
+						</span>
+									<span class="selectBox-arrow controls flR" onclick="showToCityList();" style="cursor:pointer; width:19px;height:26px">
+												<a class="select_drop_icon flR"  href="javascript:void(0)"></a>
+									</span>
+						</span>
+							<span class="right_part flL"></span>
+	                    <input type="hidden"  name ="toCitySelect" id="toCitySelect"/>
+	                    <input type="hidden" name="selectedToCityName" id="selectedToCityName" value=""/>			   			
+	                  </p>
+	                 <div class="clear"></div>
+	                </div>
+	                <!-- /Outstation Widget Inner part -->
+	                <span id = "otherCity" class="flL otherCity" style="display:none;"><a href="#" onclick="populateToCity(true);">Other City</a></span>
+                </div>
+                <div id="otherCityPresent" style="display:none"></div>
+              <!--/Widget Section 1 -->
+              
+              <!-- Local Widget Section 2 -->
+	<!--
+              <div id= "locUsage" class="mrgnBot10 clearFix"> <span class="usage flL"></span>
+	-->
+	                <!-- Widget Inner part -->
+	<!--
+	                <div class="widget_inner flL">
+	                  <h3 class="clearFix"><span class="section_heading flL" style="padding-bottom:0">Usage Type</span></h3>
+	                  <p class="clearFix destinationCity curved curved-hz-1">
+	                   <select class="textBox flL fontSize150" id = "localUsage" name="localUsage" style="width:180px;"></select>
+	                   </p>
+	                </div>
+	-->
+	                <!-- /Widget Inner part -->
+	<!--
+              </div>
+	-->
+              <!-- /Local Widget Section 2 -->
+              	              <div id="tripType" class="mrgnBot10 clearFix"> <span class="transfer_type flL mtop10"></span>
+		              <div class="radio widget_inner flL">
+		                  <h3 class="clearFix"><span class="section_heading flL" style="padding:0">Trip Type</span></h3>
+		                  <p class="fontSize150">
+		                  	<input name="outstationTripType" type="radio" id="roundTrip" value="Round Trip" checked="checked" /><label for="Round_Trip">Round Trip</label>
+		                  </p>
+		                  <p class="fontSize150">
+		                  	<input name="outstationTripType" type="radio" id="oneway" value="One Way Trip" /><label for="One_Way">One Way Trip</label>
+		                  </p>
+		              </div>    
+	              </div>
+                            <!-- Airport Widget Section -->
+              <div id= "transService" class="mrgnBot10 clearFix"> <span class="tranfer_point flL mtop10"></span>
+	              	
+	              	<div id= "transPoint" class="widget_inner transferType flL" style="width:210px;">
+		                 <h3 class="clearFix"><span id="transferLabel" class="section_heading flL" style="padding:0">I want to go to</span></h3>
+
+							<p class="clearFix destinationCity curved curved-hz-1"
+								style="width: 220px;">
+								<span class="left_part flL"></span> <span
+									class="selectBox center_part flL  selectBox-dropdown"
+									style="width: 170px; display: inline-block;"> <span
+									class="selectBox-label"><input type="text" value="Select Transfer Point"
+										class="text_field" tabindex="4"
+										onfocus="if (this.value=='Select Transfer Point') this.value='';"
+										onblur="if (this.value=='') {this.value='Select Transfer Point';}"
+										onkeydown="if(event.keyCode == 27) {$('#citySelect').val('');$('#selectedCityName').val('');}"
+										name="transferSelectajx" id="transferSelectajx" style="width: 140px;" />
+								</span> <span class="selectBox-arrow controls flR"
+									onclick="showTransferList();"
+									style="cursor: pointer; width: 19px; height: 26px"> <a
+										class="select_drop_icon flR" href="javascript:void(0)"></a>
+								</span>
+								</span> <span class="right_part flL"></span>
+							</p>
+					</div>
+		             <div style="background-color:#E5E5E5; width:1px;height:40px; float:left; margin:28px 10px 0 -5px;"></div>
+		          	 <div id= "transType" class="radio widget_inner transferType flL" style="width:330px;">
+		          	 	<span class="transfer_type flL mtop10"></span>
+		                  <h3 class="clearFix"><span class="section_heading flL" style="padding:0">Transfer Type</span></h3>
+		                  <p class="fontSize150" style="margin-left:30px;">
+		                  	<input name="transferType" type="radio" id="drop" value="Drop" checked="checked" onClick="changeLabel();" /><label for="Drop" style="margin-left:5px;">Drop to Airport/ Railway Station</label>
+		         		 </p>
+		                  <p class="fontSize150" style="margin-left:30px;">
+		                  	<input name="transferType" type="radio" id="pickup" value="Pick-Up" onClick="changeLabel();" /><label for="Pickup" style="margin-bottom:3px;margin-left:5px;">Pick-up from Airport/ Railway Station</label>
+		                  </p>
+	                </div>  
+		       </div>
+	              
+	           <input type="hidden"  name ="area" id="area" value="ALL"/>
+              <!-- /Airport Widget Section -->
+              <!-- Local/Outstation/Airport Widget Section 3 -->
+              <div class="mrgnBot10 clearFix"> <span class="watch_icn flL mtop10"></span>
+                <!-- Widget Inner part -->
+                <div class="widget_inner flL">
+                  <h3 class="clearFix hasBorderBottom"><span class="section_heading flL">When</span></h3>
+                  <p class="clearFix checkDates marginBot10">
+                    <!-- Check-Dates -->
+                    <span class="check_date flL width140"> 
+	<label>Pick-up Date <dayLight>(<span id="dayOfWeek"></span>)</dayLight></label> 
+		<span class="dates_info width140 flL">		
+			<span class="inputOuter flL">
+				<input type="text" name= "pickupdate" value="08/27/2012"  id="pickUpDate" tabindex="5" class="text_field flL" style="display:block"/>
+			</span>
+			<a onclick="$('#pickUpDate').datepicker('show'); return false;"  class="cal_icn flL" href="#"></a>
+			 <input type="hidden" name="date" id="dateField"/> 
+			 <input type="hidden" name="month" id="monthField"/>
+			 <input type="hidden" name="year" id="yearField"/>
+	</span></span>
+
+
+<span style="display: none;" class="check_date  width140 flL" onclick="hideCalendar('#pickUpDate');"> 
+	<label style="width:130px">Pick-up Time <span class="dayLight"></span></label> 
+	<span class="dates_info flL">
+		<select id="hrs" tabindex="6" name ="hour" style="width:34px;">
+			<option value="">Hrs</option>
+			<option value="00">00</option>
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08" selected="selected">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+		</select>
+
+		 <span class="colon">:</span>
+		 <select id="mins" tabindex="7" name ="minutes" style="width:40px;">
+		 	<option value="">Mins</option>
+			<option value="00" selected="selected">00</option>
+			<option value="05">05</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="45">45</option>
+			<option value="50">50</option>
+			<option value="55">55</option>
+		</select> 
+	</span></span>
+                    <!-- /Check-Dates  -->
+                    <!--Duration For Outstation Only-->
+                    	<span id="outDuration" class="check_date width105 last flL" style="border-left:1px solid #e5e5e5; padding-left:10px;"  onclick="hideCalendar('#pickUpDate');">
+				     		<label class="width105">Duration <dayLight><span>(Days)</span><dayLight></label>
+							<span style="width:140px;">				  
+			 				    <span class="inputOuter flL">
+							<select name="duration"  style="width:120px" value="Select Origin" class="text_field" tabindex="3" onfocus="if (this.value=='Select Destination') this.value='';" onblur="if (this.value=='') this.value='Select Destination';" onkeydown ="if(event.keyCode == 27) {$('#toCitySelect').val('');$('#selectedToCityName').val('');}" >
+				   <option value="1" selected="selected">1</option>
+							       <option value="2">2</option>
+							       <option value="3">3</option>
+							       <option value="4">4</option>
+							       <option value="5">5</option>
+							       <option value="6">6</option>
+							       <option value="7">7</option>
+							       <option value="8">8</option>
+							       <option value="9">9</option>
+							       <option value="10">10</option>
+							       <option value="11">11</option>
+							       <option value="12">12</option>
+							       <option value="13">13</option>
+							       <option value="14">14</option>
+							       <option value="15">15</option>
+</select>
+						</span>							</span>						</span>
+					<!-- /Duration For Outstation Only-->
+					
+                    <span id = "outBook">
+                    	<table width="28%" border="0" align="right" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <th scope="col"><input type=image name=action src="images/search.PNG"
+	
+	 value="Search Cabs" width=150px  /></th>
+                      </tr>
+                    </table>
+                    </span>
+                    <span id = "airBook"  style="display:none">
+                    	<a href="#" onclick="javascript:bookAirportTransfer();return false;" id="airportbooking" class="btn_red widgetBtn" style="white-space:nowrap; margin-top:5px; float:right;"">Search Cabs</a>
+                    </span>
+                    </p>
+                    <span id = "email" class="clearFix check_date flL">
+                    <label></label>
+                    </span></div>
+                <!-- /Widget Inner part -->
+               </div>
+              <!-- /Local/Outstation/Airport/Sightseeing Widget Section 3 -->
+              <!-- Promotion Coder -->
+              
+			    <div id="locPromo" class="mrgnBot10 errormsgDiv clearFix" style="display:none">
+					<span class="erroricon"></span> 
+					<span class="errortxt flL">Book an outstation cab and get flat 15% cashback.
+						<a href='http://www.makemytrip.com/promotion/includes/terms-car_17012012.php' target='_blank'>Click for details</a>
+					</span>
+				</div>
+		        <div id="outPromo" class="mrgnBot10 errormsgDiv clearFix" style="display:none">
+					<span class="erroricon"></span>
+					<span class="errortxt flL">Book an outstation cab and get flat 15% cashback.
+						<a href='http://www.makemytrip.com/promotion/includes/terms-car_17012012.php' target='_blank'>Click for details</a>
+					</span>
+				</div>
+			 
+	         <!-- /Promotion Coder -->
+            </div>
+            <!-- /Local/Outstation Widget -->
+           </form>
+            
+          <!-- Need help in Booking -->
+          <ul class="need_booking borderTop clearFix">
+      <li><span class="text flL">For Phone Booking  Call</span></li>
+      <li><span class="round_icn flL"><span class="call_icn flL"></span></span> <a class="link flL" title="Toll Free">982236541 / 4478624689</a></li>
+	  </ul>
+          <!-- /Need help in Booking -->
+        </div>
+        <!-- /Widget section -->
+      </div>
+      <!-- /Main -->
+      <!-- sidebar -->
+      <!-- /sidebar -->
+   </div>
+    <!-- /content -->
+  </div>
+</div>
+<div id ="bookimage" class="padBot15 clearFix"></div>
+</div>
+<!--/Left Block -->
+<!--Right Block -->
+<div id="rightblock">
+	<!-- begin ad tag-->
+	 
+ <img src="images/steps.png" border="0" alt=""></img> </noscript>
+<!-- End ad tag -->
+	<div class="mrgB5 clearFix"><span class="bestdeals"></span><h2>&nbsp;</h2></div>
+<div class="cpay_range_tooltip" id="how_to_book" onclick="noClose(event);" style="width:648px;">
+	    <p class="cpay_range">How To Book</p>
+	    <!-- Range-Section -->
+	    <div class="cpay_range_section">
+		<div id ="bookimg" class="mrgnBot10"><img src="images/how2book1.gif" alt=""/></div>
+	    	<!--<div class="terms">
+	        <ul>
+	        <li><strong>Step 1</strong>: Enter your requirements and search cars.</li>
+	        <li><strong>Step 2</strong>: From the search results, select the car that suits you best.</li>
+	        <li><strong>Step 3</strong>: Review your selection and make secured payment through your preferred mode.</li>
+	        <li><strong>Step 4</strong>: Receive a confirmation mail and a voucher.</li>
+	        </ul>
+	        </div>-->
+	    </div>
+	    <!-- /Range-Section -->
+	    <a href="javascript:void(0);" onclick="closeToolTip('how_to_book');" class="ui-closeicon"></a> 
+    </div>
+</div>
+<!--/Right Block -->    
+</div>
+<!-- /Container -->
+<script>
+$(window).resize(function() {
+	centerPopup();
+});
+
+function loadPopup(){
+		$("#bgPopup").css({
+			"opacity": "0.7"
+		});
+		$("#bgPopup").fadeIn("medium");
+		$("#Popup").fadeIn("medium");
+}
+function disablePopup(){
+		$("#bgPopup").fadeOut("medium");
+		$("#Popup").fadeOut("medium");
+}
+function centerPopup(){
+	var winw = $(window).width();
+	var winh = $(window).height();
+	var popw = $('#Popup').width();
+	var poph = $('#Popup').height();
+	$("#Popup").css({
+		"position" : "absolute",
+		"top" : winh/2-poph/2,
+		"left" : winw/2-popw/2
+	});
+	//IE6
+	$("#bgPopup").css({
+		"height": winh	
+	});
+}
+function displayPopup(popupType){
+	$("#popupType").text(popupType);
+	if(popupType == "aph"){
+		$("#aphPopupHeading").html("<b>We need minimum "+$("#aph").text()+" hours before pick-up time for online booking. Please select a different date.</b>");
+	}else if(popupType == "bw"){
+		$("#aphPopupHeading").html("<b>Sorry! Cabs can be booked online upto "+$("#bookingWindowMonths").text()+" months in advance<br>Please select a date in this booking period</b>");
+	}
+	if(popupType == "aph" || popupType == "bw"){
+		var selDate = new Date();
+		selDate.setDate(selDate.getDate()+1);
+		$("#pickUpDate2").datepicker("setDate", selDate);
+		$("#aphMonth").text($.datepicker.formatDate('M', selDate)+"'"+$.datepicker.formatDate('y', selDate));
+		$("#aphDate").text($.datepicker.formatDate('dd', selDate));
+		$("#aphWeekDay").text($.datepicker.formatDate('D', selDate));
+		$("#sameCityPopup").hide();
+		$("#Popup").css("width", "450px");
+		$("#popupBox").css("height", "167px");
+		$("#aphPopup").show();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "sc"){
+		$("#Popup").css("width", "450px");
+		$("#popupBox").css("height", "150px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").show();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "nc"){
+		$("#Popup").css("width", "300px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").show();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "noc"){
+		$("#Popup").css("width", "300px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").hide();
+		$("#origCityPopup").show();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "ndc"){
+		$("#Popup").css("width", "300px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").show();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "ntp"){
+		$("#Popup").css("width", "300px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").show();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").hide();
+	}else if(popupType == "npd"){
+		$("#Popup").css("width", "380px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").show();
+		$("#emailPopup").hide();
+	}else if(popupType == "nve"){
+		$("#Popup").css("width", "350px");
+		$("#popupBox").css("height", "75px");
+		$("#aphPopup").hide();
+		$("#sameCityPopup").hide();
+		$("#cityPopup").hide();
+		$("#origCityPopup").hide();
+		$("#destCityPopup").hide();
+		$("#transPointPopup").hide();
+		$("#prevDateBookPopup").hide();
+		$("#emailPopup").show();
+	}
+	centerPopup();
+	loadPopup();
+}
+function createDatePicker2() {
+	var datepicker2 = $("#pickUpDate2")
+			.datepicker(
+					{
+						dateFormat : "mm/dd/yy",
+						numberOfMonths : 2,
+						showAnim : "fadeIn",
+						duration : "fast",
+						showButtonPanel : true,
+						firstDay : 1,
+						closeText : "",
+						dayNamesMin : [ "Sun", "Mon", "Tue", "Wed", "Thu",
+								"Fri", "Sat" ],
+						minDate : "+0D",
+						maxDate : "+1Y",
+						autoSize : true,
+						beforeShowDay : function(selectedDate) {
+							var keyTxt = selectedDate.getDate() + "/"
+									+ (selectedDate.getMonth() + 1) + "/"
+									+ selectedDate.getFullYear();
+							var festiveText = festivals[keyTxt];
+							var retVal = [];
+							if (festiveText != null) {
+								retVal.push(true);
+								retVal.push("ui-state-festival");
+								retVal.push(festiveText)
+							} else {
+								retVal.push(true);
+								retVal.push("");
+								retVal.push("")
+							}
+							return retVal
+						},
+						onSelect : function(selectedDate) {
+							var selDate = new Date(selectedDate);
+							$("#aphMonth").text($.datepicker.formatDate('M', selDate)+"'"+$.datepicker.formatDate('y', selDate));
+							$("#aphDate").text($.datepicker.formatDate('dd', selDate));
+							$("#aphWeekDay").text($.datepicker.formatDate('D', selDate));
+						}
+					})
+}
+function searchCars(){
+	$('#pickUpDate').val($('#pickUpDate2').val());
+	if($("#popupType").text() == 'aph'){
+		$("#aphPopupDisplayed").text("true");
+		$("#bookingWindowPopupDisplayed").text("false");
+	}else if($("#popupType").text() == 'bw'){
+		$("#bookingWindowPopupDisplayed").text("true");
+		$("#aphPopupDisplayed").text("false");
+	}
+	disablePopup();
+	if($("#bookingType").text() == "Local"){
+		bookLocalUsage();
+	}else if($("#bookingType").text() == "Transfers"){
+		bookAirportTransfer();
+	}else if($("#bookingType").text() == "Outstation"){
+		bookOutstationUsage();
+	}
+}
+$(document).keyup(function(e) {
+ if (e.keyCode == 27) {disablePopup();}
+});
+</script>
+
+<style type="text/css">
+
+#bgPopup{
+	display:none; 
+	position:fixed;  
+	_position:absolute; /* hack for internet explorer 6*/  
+	height:100%;  
+	width:100%;  
+	top:0;  
+	left:0;  
+	background:#000000;   
+	z-index:100001;  
+}  
+#Popup{  
+	display:none;  
+	margin-top:50px;
+	z-index:100002;  
+	font-size:13px;  
+} 
+
+.xhrs_container{padding:20px;}
+.xhrs_container p{font-size:15px;color:#000;margin:0 0 10px 0;}
+.dmy_blc{padding:0 0 20px 75px;border-bottom:1px solid #f1f1f1;margin:0 0 5px 0;}
+.date_blc{background:url(images/date_block_bg.png) no-repeat;width:52px;height:54px;margin-right:5px;}
+.xmonyr{display:block;text-align:center;font-size:12px;padding:2px 0 0 0;}
+.xdate{display:block;text-align:center;font-size:19px;font-weight:bold;padding:5px 0 4px 0;}
+.xday{display:block;text-align:center;font-size:12px;}
+.xcalicon{margin:15px 50px 0 0;}
+.xsrc_btn{line-height:10px !important;font-size:140% !important;}
+.font120{font-size:120% !important;}
+.font102{font-size:102% !important;}
+.font90{font-size:90% !important;}
+.mrgnTop10{margin-top:10px;}
+.mrgnBot10{margin-bottom:10px;}
+.datesection{margin-top:40px;}
+</style>
+<div id="aph" style="display:none;"></div>
+ <div id="aphPopupDisplayed" style="display:none;"></div>
+ <div id="bookingWindowPopupDisplayed" style="display:none;"></div>
+ <div id="popupType" style="display:none;"></div>
+<div id="bgPopup"></div>   <div id ="advancePurchaseHoursLocal" style="display:none">8</div>
+  <div id ="advancePurchaseHoursOutstation" style="display:none">12</div>
+  <div id ="advancePurchaseHoursTransfers" style="display:none">8</div>
+  <div id ="bookingWindowMonths" style="display:none">3</div>
+  <div id ="curServerDate" style="display:none">27/08/2012/02/16/26</div> 
+<!-- footer -->
+<!-- /footer -->
+<script type="text/javascript">
+$("#textual").text("Less");
+	$("#icons").attr("class","chf_collpse_state");
+	$("#ghf_footer_center").show();
+	onLoadFunctions();
+	/*if($("#serviceTypeStr").text() == 'Local Usage'){
+		showWidget('Local');
+		$("#localUsageBtn").attr("checked","true");		
+	} else if($("#serviceTypeStr").text() == 'Transfers'){
+		showWidget('Transfers');
+		$("#airportBtn").attr("checked","true");		
+	} else {
+		showWidget('Outstation');
+		$("#outstationBtn").attr("checked","true");		
+	}*/
+	showWidget('Outstation');
+	$("#outstationBtn").attr("checked","true");
+	function closeAllToolTips(){
+		closeToolTip('confirmenquiry');
+		closeToolTip('how_to_book');
+	}	
+	document.onclick = closeAllToolTips;
+	
+	function showConfirmation(event,reqId){
+			 showToolTip(event,'confirmenquiry');
+			 $('#confirmReqNum').text(reqId);
+			 $("#confirmenquiry").attr("style","display: block;left: 386px;position: absolute;top: 220px;width: 600px; z-index: 1000;");
+	}  
+	function closeSuggestCity(){
+		setTimeout("closePopup()", 500);	
+	}
+	function closePopup(){
+		chf_overlayclose('chf_overlaycontents','chf_blackoverlay');
+		chf_overlayopen("thanksOverlay30de.html?width=380&amp;height=108&amp;frame=yes","chf_overlaycontents", "chf_blackoverlay");
+	} 
+	function closeThanksOverlay(){
+		chf_overlayclose('chf_overlaycontents','chf_blackoverlay');	
+	}
+	$(document).keyup(function(e) {
+  	if (e.keyCode == 27) { 
+  		chf_overlayclose('chf_overlaycontents','chf_blackoverlay');
+  	}
+});
+</script>
+
+<!-- begin Marin Software Tracking Script -->
+<script type='text/javascript'>
+var _marinClientId = "9291338715";
+var _marinProto = (("https:" == document.location.protocol) ? "https://" :
+"http://");
+document.write(unescape("%3Cscript src='" + _marinProto +
+"tracker.marinsm.com/tracker/" +
+_marinClientId + ".js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type='text/javascript'>
+try {
+_marinTrack.trackPage();
+} catch(err) {}
+</script>
+<noscript>
+<img src="https://tracker.marinsm.com/tp?act=1&amp;cid=9291338715&amp;script=no" >
+</noscript>
+<!-- end Copyright Marin Software -->
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type='text/javascript'>
+document.write(unescape("%3Cscript%20src='"+(document.location.protocol=='https:'?'https://clicktale.pantherssl.com/':'http://s.clicktale.net/')+"WRd.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+var ClickTaleSSL=1;
+if(typeof ClickTale=='function') ClickTale(15213,1,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+</body>
+
+<!-- Mirrored from www.makemytrip.com/car-rental/. by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 26 Aug 2012 20:50:13 GMT -->
+</html>

@@ -1,0 +1,37 @@
+body {
+	font: 0.8em/21px arial,sans-serif;
+}
+
+.checkbox, .radio {
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+.radio {
+	background: url(radio.png) no-repeat;
+}
+.select {
+	position: absolute;
+	width: 150px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 40px;
+	padding: 10px 35px 5px 25px;
+	color: #666666;
+	font: 16px/21px arial,sans-serif;
+	background: url(www.bluearrowinfotech.com/CAR-RENTAL/images/select1.png) no-repeat;
+	float:left;
+	overflow: visible;
+}/* CSS Document */
+.text {
+	position: absolute;
+	width: 150px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 40px;
+	padding: 10px 35px 5px 25px;
+	color: #666666;
+	font: 16px/21px arial,sans-serif;
+	background: url(select1.png) no-repeat;
+	overflow: visible;
+}/* CSS Document */
